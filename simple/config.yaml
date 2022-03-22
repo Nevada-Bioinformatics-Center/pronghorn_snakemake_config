@@ -1,0 +1,28 @@
+cluster:
+  mkdir -p logs/{rule} &&
+  sbatch
+    --partition={resources.partition}
+    --account={resources.account}
+    --cpus-per-task={threads}
+    --mem={resources.mem_mb}
+    --job-name=smk-{rule}-{wildcards}
+    --output=logs/{rule}/{rule}-{wildcards}-%j.out
+default-resources:
+  - partition=cpu-s1-inbre-0
+  - account=cpu-s1-inbre-0
+  - mem_mb=2000
+  - cpus=1
+  - time_min=60
+#    --qos={resources.qos}
+#  - qos=<name-of-quality-of-service>
+#restart-times: 3
+max-jobs-per-second: 100
+max-status-checks-per-second: 10
+local-cores: 1
+latency-wait: 60
+jobs: 5
+#keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+scheduler: greedy
+use-conda: True
