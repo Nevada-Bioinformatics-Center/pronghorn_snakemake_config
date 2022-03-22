@@ -1,1 +1,1 @@
-# ronghorn_snakemake_config
+# Pronghorn_snakemake_config
