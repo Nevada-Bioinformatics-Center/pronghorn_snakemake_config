@@ -7,9 +7,22 @@ Note: Please, use the latest Snakemake version (8.X)
 - Step 1: Check the Snakemake version in your local pronghorn account by 
 `snakemake --version`
 
-- Step 2: If the version is *8.X*, then please download the `simple_v8` directory along with the `config.yaml` file in it and upload it into the hidden directory `.config` in your local pronghorn account. You may change the directory name to a name of your choice. Later, this will be your snakemake profile when executed.
+- Step 2: If the version is *8.X*, then please download the `simple_v8/config.yaml` file in it and upload it into the correct folder as follows.  Create the directory structure using `mkdir -p ~/.config/snakemake/simple_v8/` then `cd ~/.config/snakemake/simple_v8/`
+Afterwards use `wget` or `curl` to download the `config.yaml` file: 
+```
+wget https://raw.githubusercontent.com/Nevada-Bioinformatics-Center/pronghorn_snakemake_config/refs/heads/main/simple_v8/config.yaml
+```
+You may change the `simple_v8` directory name to a name of your choice. Later, this will be your snakemake profile when executed.
 
-- Step 3: Install the following commands `pip install snakemake-executor-plugin-slurm` and `pip install snakemake-executor-plugin-cluster-generic`
+- Step 3: Install the following commands 
+```
+pip install snakemake-executor-plugin-slurm
+
+```
+and 
+```
+pip install snakemake-executor-plugin-cluster-generic
+```
 
 - Step 4: Go to the folder/directory containing the Snakefile you wish to run.
 
