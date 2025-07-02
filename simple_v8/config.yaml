@@ -5,6 +5,7 @@ cluster-generic-submit-cmd:
     --partition={resources.partition}
     --account={resources.account}
     --cpus-per-task={threads}
+    --time={resources.time_min}
     --mem={resources.mem_mb}
     --job-name=smk-{rule}-{wildcards}
     --output=logs/{rule}/{rule}-{wildcards}-%j.out
